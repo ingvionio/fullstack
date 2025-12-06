@@ -9,6 +9,7 @@ services:
       - "8000:8000"
     volumes:
       - ./media:/app/media
+      - ./health_map.db:/app/health_map.db
     restart: unless-stopped
 
   frontend:
