@@ -1,0 +1,223 @@
+/* Overlay to catch clicks outside */
+.activity-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 150;
+}
+
+/* Menu Container */
+.activity-menu {
+  position: absolute;
+  z-index: 160;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-menu-header {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0; /* Header shouldn't shrink */
+}
+
+.activity-menu-header h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+    padding: 0;
+    line-height: 1;
+}
+
+/* Shared Grid */
+.activity-grid {
+  padding: 10px;
+  display: grid;
+  gap: 10px;
+  overflow-y: auto; /* Enable scrolling */
+}
+
+/* Default Item Styles (Desktop) */
+.activity-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.activity-item:hover {
+  background-color: #f5f5f5;
+}
+
+.icon-wrapper {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.activity-item span {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  margin-left: 10px; /* Default margin for desktop list view */
+}
+
+/* Hide dummy container on desktop */
+.mobile-dummy-items {
+    display: none;
+}
+
+/* Desktop: Sidebar sliding from left */
+@media (min-width: 769px) {
+  .activity-menu {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 350px; /* Increased width to ensure fit for 4 buttons */
+    border-radius: 0;
+    animation: slideRight 0.3s ease-out;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.15);
+  }
+
+  .activity-menu-header {
+    justify-content: flex-end; /* Move close button to right */
+    padding: 15px;
+    border-bottom: none;
+  }
+
+  .activity-menu-header h3 {
+    display: none;
+  }
+
+  .activity-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    justify-items: center;
+    padding: 10px 15px;
+    gap: 15px;
+    overflow-x: hidden; /* Remove horizontal scrollbar */
+  }
+
+  .activity-item {
+    justify-content: center;
+    padding: 8px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+  }
+
+  .activity-item span {
+    display: none;
+  }
+
+  .activity-menu-overlay {
+      background: transparent;
+  }
+}
+
+/* Mobile: Slide-up from bottom, grid layout, no labels */
+@media (max-width: 768px) {
+  .activity-menu {
+    top: auto; /* Reset top */
+    bottom: 0; /* Anchor to bottom */
+    left: 0;
+    width: 100%; /* Full width */
+    height: 40vh; /* Fixed height for mobile to match search box slide */
+    border-radius: 20px 20px 0 0; /* Rounded top corners */
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  .activity-menu-overlay {
+      z-index: 199; 
+  }
+  .activity-menu {
+      z-index: 200;
+  }
+
+  .activity-grid {
+      grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); /* Square grid */
+      justify-items: center; /* Center items in grid cells */
+      padding: 20px;
+      gap: 15px;
+      /* Ensure scrolling works nicely on mobile */
+      -webkit-overflow-scrolling: touch; 
+  }
+  
+  /* Show dummy items on mobile */
+  .mobile-dummy-items {
+      display: contents; /* Use 'contents' to let children participate in the parent grid */
+  }
+
+  .activity-item {
+      flex-direction: column; /* Stack icon vertically */
+      justify-content: center;
+      padding: 10px;
+      width: 60px;
+      height: 60px;
+      background: #f9f9f9; /* Light bg for squares */
+      border-radius: 12px;
+      /* Important: prevent shrinking */
+      flex-shrink: 0;
+  }
+
+  .dummy-item {
+      background: #eee; /* Slightly darker to show they exist */
+      cursor: default;
+      display: flex;
+  }
+  .dummy-item:hover {
+      background: #eee;
+  }
+
+  .activity-item span {
+      display: none; /* Hide labels on mobile */
+  }
+  
+  .activity-item .icon-wrapper {
+      width: 40px; /* Larger icons on mobile */
+      height: 40px;
+      margin: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes slideRight {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}

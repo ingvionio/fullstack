@@ -1,0 +1,86 @@
+.map-layer-toggles {
+  position: absolute;
+  top: 70px;
+  left: 10px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.layer-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #4a5568;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 160px;
+}
+
+.layer-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.layer-toggle svg {
+  flex-shrink: 0;
+}
+
+.toggle-label {
+  white-space: nowrap;
+}
+
+/* Heatmap button specific styles */
+.layer-toggle.heatmap-btn:hover {
+  background: #fff5f5;
+  border-color: #e53e3e;
+}
+
+.layer-toggle.heatmap-btn.active {
+  background: linear-gradient(135deg, #f56565 0%, #ed8936 100%);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 6px 20px rgba(245, 101, 101, 0.35);
+}
+
+.layer-toggle.heatmap-btn.active:hover {
+  background: linear-gradient(135deg, #ed8936 0%, #f56565 100%);
+}
+
+/* Points button specific styles */
+.layer-toggle.points-btn:hover {
+  background: #ebf8ff;
+  border-color: #3182ce;
+}
+
+.layer-toggle.points-btn.active {
+  background: linear-gradient(135deg, #4299e1 0%, #667eea 100%);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 6px 20px rgba(66, 153, 225, 0.35);
+}
+
+.layer-toggle.points-btn.active:hover {
+  background: linear-gradient(135deg, #667eea 0%, #4299e1 100%);
+}
+
+/* Responsive - hide text on small screens */
+@media (max-width: 480px) {
+  .layer-toggle {
+    padding: 10px;
+    min-width: auto;
+  }
+  
+  .toggle-label {
+    display: none;
+  }
+}
+

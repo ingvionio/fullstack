@@ -1,0 +1,41 @@
+.map-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 100;
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  gap: 8px;
+}
+
+.map-control-button {
+  padding: 8px 16px;
+  border: 2px solid #e2e8f0;
+  background: white;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2d3748;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.map-control-button:hover {
+  background: #f7fafc;
+  border-color: #667eea;
+}
+
+.map-control-button.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: transparent;
+  font-weight: 600;
+}
+
+.map-control-button.active:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+

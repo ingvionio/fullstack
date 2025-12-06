@@ -1,0 +1,389 @@
+.coupons-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  padding-bottom: 40px;
+}
+
+.coupons-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Заголовок */
+.coupons-header {
+  color: white;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.coupons-header-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+}
+
+.coupons-header-text {
+  flex: 1;
+  text-align: center;
+}
+
+.coupons-header h1 {
+  margin: 0 0 8px 0;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.coupons-subtitle {
+  margin: 0;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.back-button {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  backdrop-filter: blur(10px);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateX(-2px);
+}
+
+/* Промокод */
+.promo-code-section {
+  margin-bottom: 8px;
+}
+
+.promo-code-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 24px;
+  animation: slideUp 0.3s ease-out;
+}
+
+.promo-code-header h2 {
+  margin: 0 0 16px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.promo-code-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.promo-code-description {
+  margin: 0;
+  font-size: 16px;
+  color: #718096;
+}
+
+.promo-code-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+}
+
+.promo-code-text {
+  flex: 1;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 2px;
+  font-family: 'Courier New', monospace;
+}
+
+.copy-button {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.copy-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.copy-button.copied {
+  background: rgba(72, 187, 120, 0.3);
+  border-color: #48bb78;
+}
+
+.promo-code-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.promo-discount {
+  font-size: 18px;
+  font-weight: 700;
+  color: #48bb78;
+}
+
+.promo-valid {
+  font-size: 14px;
+  color: #718096;
+}
+
+/* Секция купонов */
+.coupons-section {
+  margin-bottom: 8px;
+}
+
+.section-title {
+  margin: 0 0 20px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+}
+
+.coupons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Карточка купона */
+.coupon-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  animation: slideUp 0.3s ease-out;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.coupon-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+}
+
+.coupon-header {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.coupon-icon {
+  font-size: 48px;
+}
+
+.coupon-discount {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.coupon-body {
+  padding: 20px;
+}
+
+.coupon-category {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.coupon-title {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.coupon-description {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  color: #718096;
+  line-height: 1.5;
+}
+
+.coupon-code-section {
+  margin-bottom: 12px;
+}
+
+.coupon-code-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: #f7fafc;
+  border: 2px dashed #cbd5e0;
+  border-radius: 8px;
+}
+
+.coupon-code-text {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a202c;
+  letter-spacing: 1px;
+  font-family: 'Courier New', monospace;
+}
+
+.coupon-copy-button {
+  padding: 6px 12px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.coupon-copy-button:hover {
+  background: #5568d3;
+  transform: scale(1.05);
+}
+
+.coupon-copy-button.copied {
+  background: #48bb78;
+}
+
+.coupon-footer {
+  padding-top: 12px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.coupon-valid {
+  font-size: 12px;
+  color: #a0aec0;
+}
+
+/* Информация о наградах */
+.rewards-info {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 24px;
+  animation: slideUp 0.3s ease-out;
+}
+
+.rewards-info h3 {
+  margin: 0 0 20px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a202c;
+  text-align: center;
+}
+
+.rewards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reward-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #f7fafc;
+  border-radius: 8px;
+}
+
+.reward-icon {
+  font-size: 24px;
+}
+
+.reward-item span:last-child {
+  font-size: 14px;
+  color: #4a5568;
+}
+
+/* Анимация */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .coupons-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .coupons-header-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .back-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .coupons-header-text {
+    text-align: center;
+  }
+
+  .coupons-header h1 {
+    font-size: 24px;
+  }
+
+  .promo-code-display {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .promo-code-text {
+    text-align: center;
+  }
+
+  .copy-button {
+    width: 100%;
+  }
+
+  .promo-code-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+

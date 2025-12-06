@@ -1,0 +1,136 @@
+.ol-popup {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  bottom: 12px;
+  left: -50px;
+  min-width: 200px;
+  text-align: center;
+}
+.ol-popup:after, .ol-popup:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.ol-popup:after {
+  border-top-color: white;
+  border-width: 10px;
+  left: 48px;
+  margin-left: -10px;
+}
+.ol-popup:before {
+  border-top-color: #cccccc;
+  border-width: 11px;
+  left: 48px;
+  margin-left: -11px;
+}
+.ol-popup-closer {
+  text-decoration: none;
+  position: absolute;
+  top: 2px;
+  right: 8px;
+  color: #aaa;
+  font-size: 16px;
+  font-weight: bold;
+}
+.ol-popup-closer:after {
+  content: "✖";
+}
+.popup-content {
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.popup-content h3 {
+    margin: 0 0 12px 0;
+    color: #1a202c;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.popup-info {
+    text-align: left;
+}
+
+.popup-info p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #2d3748;
+}
+
+.popup-info strong {
+    color: #1a202c;
+    font-weight: 600;
+}
+
+.popup-mark {
+    display: inline-block;
+    padding: 4px 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    min-width: 30px;
+    text-align: center;
+}
+
+.popup-review-button {
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.popup-review-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.popup-review-button:active {
+    transform: translateY(0);
+}
+
+.popup-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.popup-view-reviews-button {
+    width: 100%;
+    padding: 12px 20px;
+    background: #f7fafc;
+    color: #667eea;
+    border: 2px solid #667eea;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.popup-view-reviews-button:hover {
+    background: #edf2f7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.popup-view-reviews-button:active {
+    transform: translateY(0);
+}
+

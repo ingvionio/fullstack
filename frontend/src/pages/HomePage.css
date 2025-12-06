@@ -1,0 +1,62 @@
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.home-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.home-card h1 {
+  margin: 0 0 24px 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.user-info {
+  margin: 24px 0;
+  padding: 20px;
+  background: #f7fafc;
+  border-radius: 8px;
+}
+
+.user-info p {
+  margin: 8px 0;
+  color: #2d3748;
+}
+
+.user-email {
+  color: #718096;
+  font-size: 14px;
+}
+
+.logout-button {
+  padding: 12px 24px;
+  background: #fc8181;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 16px;
+}
+
+.logout-button:hover {
+  background: #f56565;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 101, 101, 0.3);
+}
+
