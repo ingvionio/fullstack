@@ -42,9 +42,11 @@ class Industry(Base):
 
     id: Mapped[int_pk]
     name: Mapped[str_255] = mapped_column(String, nullable=False, unique=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now(), nullable=False)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime, default=datetime.utcnow, server_default=func.now(), nullable=False
+    )
     updated_at: Mapped[datetime] = mapped_column(
-        DateTime, server_default=func.now(), onupdate=func.now(), nullable=False
+        DateTime, default=datetime.utcnow, server_default=func.now(), onupdate=func.now(), nullable=False
     )
 
     sub_industries: Mapped[List["SubIndustry"]] = relationship(
@@ -62,9 +64,11 @@ class SubIndustry(Base):
     base_score: Mapped[float] = mapped_column(Float, default=0.0)
     industry_id: Mapped[int] = mapped_column(ForeignKey("industries.id", ondelete="CASCADE"), nullable=False)
     industry: Mapped["Industry"] = relationship(back_populates="sub_industries")
-    created_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now(), nullable=False)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime, default=datetime.utcnow, server_default=func.now(), nullable=False
+    )
     updated_at: Mapped[datetime] = mapped_column(
-        DateTime, server_default=func.now(), onupdate=func.now(), nullable=False
+        DateTime, default=datetime.utcnow, server_default=func.now(), onupdate=func.now(), nullable=False
     )
 
     __table_args__ = (UniqueConstraint("name", "industry_id", name="uq_sub_industry_name_per_industry"),)
@@ -79,9 +83,11 @@ class Criteria(Base):
     text: Mapped[str_255] = mapped_column(String, nullable=False)
     industry_id: Mapped[int] = mapped_column(ForeignKey("industries.id", ondelete="CASCADE"), nullable=False)
     industry: Mapped["Industry"] = relationship(back_populates="criteria")
-    created_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now(), nullable=False)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime, default=datetime.utcnow, server_default=func.now(), nullable=False
+    )
     updated_at: Mapped[datetime] = mapped_column(
-        DateTime, server_default=func.now(), onupdate=func.now(), nullable=False
+        DateTime, default=datetime.utcnow, server_default=func.now(), onupdate=func.now(), nullable=False
     )
 
     __table_args__ = (UniqueConstraint("text", "industry_id", name="uq_criteria_text_per_industry"),)
